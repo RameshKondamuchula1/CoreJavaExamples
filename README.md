@@ -1,0 +1,1 @@
+A Core java project that covers all the basics to advanced concepts
