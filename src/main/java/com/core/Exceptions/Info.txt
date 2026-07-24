@@ -1,0 +1,56 @@
+Exception handling is one of the most important features of java programming that allows us to handle the runtime errors caused by exceptions.
+
+Exceptions are occur not only because of a bad programming, even a good programming code can also cause an Exception like environment configurations missing \
+or resources like DB are down and accessing a folder in a storage location which is not present at that time.
+
+A good programmer is who is handling the exceptions. When handling the exceptions we need to keep two things in our mind.
+  one is a friendly message to the user and the other one is providing enough information to debug the problem(Stack trace).
+
+Once an exception pop up if we don't handle it then the sub-sequent code is not going to execute. 
+If we want to execute rest of the code block then we need to handle the exception properly.
+
+If we don't handle the exception in the code block or method then it would be thrown that exception to calling methods. 
+
+If we handle the exception in occurred method then the calling methods would never aware of that exception. 
+
+We can use multiple catch blocks to handle the exceptions. 
+
+If we want close any resources before or clean up anything before returning to calling method, we generally use finally code block. 
+Finally code block will be executed whether our code throws an exception or not. A finally block will exists without any catch block.
+
+try with resources will give us use of finally block as an optional or not required. JVM will take care of those resources closing.
+
+Hierarchy:
+checked:
+
+Exception extends Throwable{} --> developer can able to handle 
+ 
+InterruptedException extends Exception{}
+
+unchecked:
+
+RuntimeException extends Exception{}
+
+NullPointerException extends RuntimeException {}
+
+Error extends Throwable {} --> JVM Out of Memory Error, StatckOverFlow error --> These are called as Errors, developer will not be able to handle this errors.
+
+
+Checked Exceptions:  The exceptions which are directly extending Exception are called Checked exceptions or Compiled exceptions. These are risk exceptions
+                     that may cause crash of the applications. So developer forced to handle Checked exceptions.
+                     examples of checked exceptions are IOException, SQLException, ClassNotFoundException, FileNotFoundException and ServletException.
+ 
+Unchecked Exceptions: The exceptions which are extending RuntimeException are called unchecked exceptions or RuntimeExceptions.
+                     We don't really need to handle these exceptions since these are not that much risk to application running. But as a good programmer 
+                     we need to take care of the Exception handling properly.
+                     examples of unchecked exceptions are NullPointerException, IllegalArgumentException, ArrayIndexOutOfBoundException, ClassCastException,
+                     ArithematicException and SecurityException.
+
+
+
+
+
+
+
+
+
