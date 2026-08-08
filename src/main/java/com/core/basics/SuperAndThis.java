@@ -1,7 +1,7 @@
 package com.core.basics;
 
 public class SuperAndThis {
-    private String name;// not accessible by sub-calsses
+    String name;// not accessible by sub-calsses
     public  String name2;//accessible by sub-calsse super key word
     public static void main(String[] args) {
 
@@ -34,7 +34,9 @@ public class SuperAndThis {
 }
 
 class SubClassSuper extends SuperAndThis {
-    public  String name2Local = "public-name-local";
+    public String name2Local = "public-name-local";
+
+    private String localName;
 
     public void printMessages() {
         System.out.println(super.name2);//Access on
@@ -42,7 +44,19 @@ class SubClassSuper extends SuperAndThis {
         System.out.println(super.getName());
     }
 
-    public void printMessages2() {
+    public SubClassSuper(String name) {
+      }
+
+    public SubClassSuper(String name, String name2, String localName) {
+        super(name, name2);
+        //this(name2); -> Throws only one explicit constructor allowed error
+        this.localName = super.name;
+    }
+
+    public static void test() {
+        //this.localName = super.name;
+        //throws 'super' or 'this
+        // ' cannot be referenced from a static context
     }
 // super should be first statement in constructor or method.
 // this vs super :  super has more precedence than this

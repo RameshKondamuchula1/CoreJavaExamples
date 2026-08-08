@@ -2,7 +2,7 @@ package com.core.Threads;
 
 import java.util.concurrent.*;
 
-public class CallableRunnerThreads {
+public class  CallableRunnerThreads {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		ExecutorService executorService = Executors.newFixedThreadPool(1);

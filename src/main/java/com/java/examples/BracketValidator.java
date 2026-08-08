@@ -7,11 +7,16 @@ public class BracketValidator {
 
         System.out.println(validator("{()sh}})")); // Output: false
         System.out.println(validator("{[()()]}")); // Output: true
+        System.out.println(validator("]}")); // Output: false
+        System.out.println(validator(""));// Output: false
+        System.out.println(validator("{"));// Output: false
+        System.out.println(validator("{[()())}"));
+        System.out.println(validator("{}()[]")); // Output: true
     }
 
     public static boolean validator(String input) {
         Stack<Character> bracktes = new Stack<>();
-        if(input == null || input.isEmpty()) {
+        if(input == null || input.isEmpty() || input.length() == 1) {
             return false;
         }
 

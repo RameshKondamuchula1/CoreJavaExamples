@@ -1,14 +1,13 @@
 package com.java.examples;
 
-public class FibonacciSeries {
+public class
+FibonacciSeries {
 
     public static void main(String[] args) {
         int n = 10;
         FibonacciSeries fibonacciSeries = new FibonacciSeries();
         fibonacciSeries.fib(n);
-
         for (int i = 0; i < n; i++) {
-
             System.out.print(" "+fibonacciSeries.fibWithRecursive(i));
         }
     }

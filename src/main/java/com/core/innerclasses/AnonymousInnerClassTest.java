@@ -13,7 +13,6 @@ public class AnonymousInnerClassTest {
         Anonymous1 anonymous1 = new Anonymous1() {
             @Override
             public void printLastName() {
-                super.printLastName();
                 System.out.println("Anonymous1 LastName");
             }
         };
@@ -25,11 +24,9 @@ public class AnonymousInnerClassTest {
 interface Anonymous {
     void printLastName();
 }
-//As a Subclass
-class Anonymous1 {
-    void printLastName() {
-        System.out.println("Anonymous1");
-    }
+//As a Abstract Class
+abstract class Anonymous1 {
+    abstract void printLastName();
 }
 /*
 An anonymous inner class is an inner class without a name. It is declared and instantiated in a single statement.

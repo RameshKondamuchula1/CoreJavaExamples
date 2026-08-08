@@ -7,21 +7,21 @@ public class LongestNonRepeatedCharSubString {
 
     public static void main(String[] args) {
 
-        printNonRepeatedSubstring("lhgkabcaad");
+        printNonRepeatedSubstring("1R1T7");
     }
 
     public static void printNonRepeatedSubstring(String value) {
         int maxLength = 0;
         Map<Character, Integer> map = new HashMap<>();
-        int left = 0;
-        for (int right = 0; right < value.length(); right++) {
-            char c = value.charAt(right);
+        int index = 0;
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
             if (map.containsKey(c)) {
-                left = Math.max(left, map.get(c) + 1);
+                index = Math.max(index, map.get(c) + 1);
             }
-
-            map.put(c, right);
-            maxLength = Math.max(maxLength, right - left + 1);
+            map.put(c, i);
+            maxLength = Math.max(maxLength, i - index + 1);// Always calculates Current String length from
+                                                           // non-repeated substring index
 
         }
 

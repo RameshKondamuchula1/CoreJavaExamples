@@ -9,9 +9,9 @@ public class BalacedParanthesis {
     }
 
     public void printBalancedparanthesis() {
-        String input = "(()))";
+        String input = ")))";
         int balance = 0, neededAtStart = 0;
-        for (char c : input.toCharArray()) {
+        for (char c : input.toCharArray()) { // TC O(N)
             if (c == '(') balance++;
             else balance--;
 
@@ -28,7 +28,7 @@ public class BalacedParanthesis {
 
 
     public void printBalancedparanthesis2() {
-        String input = "(()))";
+        String input = ")))";
         int balance = 0, neededAtStart = 0;
         for (char c : input.toCharArray()) { // O(N) time complexicity
             if (c == '(') balance++;
@@ -36,7 +36,7 @@ public class BalacedParanthesis {
         }
         if (balance < 0){
             balance = -balance;
-           input = "(".repeat(balance) + input;
+            input = "(".repeat(balance) + input;
         } else {
             input = input + ")".repeat(balance);
         }

@@ -43,10 +43,9 @@ public class MaxRepeatedNumberOrCharacter {
         int maxCount = 0;
         char currentElement = 0;
         for(char i: input.toCharArray()) { // Time: O(N)
-            int count = map.getOrDefault(i, 0) + 1;
-            map.put(i, count);
-            if(count > maxCount) {
-                maxCount = count;
+            map.put(i, map.getOrDefault(i,0) + 1);
+            if(map.get(i) > maxCount) {
+                maxCount = map.get(i);
                 currentElement = i;
             }
         }

@@ -31,7 +31,7 @@ public class DuplicatesFormArray {
                 .collect(Collectors.groupingBy(fr -> fr, Collectors.counting()))
                 .entrySet().stream().filter(e -> e.getValue() > 1)
                         .map(Map.Entry::getKey)
-                .map(String::valueOf).toList());
+                .toList());
     }
 
     private String findDuplicatesFromStringWithCount(String fruits) {

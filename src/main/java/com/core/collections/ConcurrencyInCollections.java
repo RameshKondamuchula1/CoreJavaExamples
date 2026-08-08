@@ -2,6 +2,7 @@ package com.core.collections;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrencyInCollections {
 
@@ -23,7 +24,9 @@ public class ConcurrencyInCollections {
         //For HashMap we can use ConcurrentHashMap of concurrent package for concurrency
         Map<String, String> concurrentMap = new ConcurrentHashMap<>();
 
-        // Most of the Collections are not-thread safe we can not achieve concurrency with them.
+        //Provide auto increment and thread safety
+        AtomicInteger i = new AtomicInteger();
+        i.incrementAndGet();
 
     }
 }

@@ -24,7 +24,8 @@ public class SubArrayMinUnfairnes {
                 System.arraycopy(arrn, i, result, 0, k);
             }
         }
-        
+
+
         return result;
     }
 

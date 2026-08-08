@@ -45,7 +45,7 @@ public class Duplicates {
 		 .stream()
 		 .filter(entry -> entry.getValue() > 1)
 		 .map(Map.Entry::getKey)
-		 .collect(Collectors.toList());
+		 .toList();// toList() of StreamAPI in Introduced in Java 16
 		 System.out.println("Duplicates: " + duplicateWords);
 	}
 

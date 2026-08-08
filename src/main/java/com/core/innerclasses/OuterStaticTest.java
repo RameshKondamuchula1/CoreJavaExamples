@@ -9,9 +9,13 @@ public class OuterStaticTest {
 
 class OuterClass {
     private static final String name = "Mansi Static";
+    private String names1;
 
     static class InnerClass {
+        private String names;
         void printName() {
+            //System.out.println("Name : " + names1); Non-Static members of outer class are not allowed
+            System.out.println("Name : " + names);// Non-Static members of inner static class are allowed
             System.out.println("Name : " + name);
         }
     }

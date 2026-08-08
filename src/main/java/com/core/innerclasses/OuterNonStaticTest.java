@@ -13,8 +13,8 @@ public class OuterNonStaticTest {
 
     static void localInnerMethod() {
         int x = 98;
+        final int Y = 100;
        //Method Local Inner Class
-        // It can only be instantiated within the method where it is defined.
         //A method-local inner class is defined inside a method of the outer class.
         // It can only be instantiated within the method where it is defined.
         //Cannot access non-final local variables before Java 8.
@@ -22,11 +22,11 @@ public class OuterNonStaticTest {
         //Cannot be declared as private, protected, static, or transient.
         //Can be declared as abstract or final, but not both.
        class LocalInnerClass {
-           //x = 100; throws an error because this statement can change the scope final to non final.
+          //x = 100; //throws an error because this statement can change the scope final to non final.
             public void localInnerMethodZZPrint () {
                 System.out.println("Name : Local Inner Class Limited to a method" );
-                System.out.println("x = " + x);//From Java 8 onwards, method-local inner classes can
-                                               // access effectively final or final local variables.
+                System.out.println("x = " + x + ", Y = " + Y);//From Java 8 onwards, method-local inner classes can
+                                               // access effectively final or non-final local variables.
             }
         }
         LocalInnerClass localInnerClass = new LocalInnerClass();

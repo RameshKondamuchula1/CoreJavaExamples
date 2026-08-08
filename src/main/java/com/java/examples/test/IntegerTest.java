@@ -20,13 +20,13 @@ public class IntegerTest {
 		 * for (int value: intArray) { intList.add(value); }
 		 */
 		
-		Comparator<Integer> intCompre = (e1, e2) -> e1.compareTo(e2); 
+		Comparator<Integer> intCompre = Integer::compareTo;
 		//General Code
-		Integer thirdHighest = intList.stream().sorted(intCompre.reversed()).skip(2).findFirst().get();
+		Integer thirdHighest = intList.stream().sorted(intCompre.reversed()).skip(2).findFirst().orElse(null);
 		//natural order
 		//Integer secondHighest = listOfNums.stream().sorted(Comparator.naturalOrder()).skip(1).findFirst().get();
 		//Simplified Code
-		Integer secondHighest = listOfNums.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+		Integer secondHighest = listOfNums.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
 		System.out.println("thirdHighest" + thirdHighest);
 		System.out.println("secondHighest" + secondHighest);
 		System.out.println(intList);
@@ -35,7 +35,7 @@ public class IntegerTest {
 		
 		//String Test
 		List<String> listOfNames = List.of("Ramesh", "Masni", "Vikas", "ITI", "Vidwath");
-		String name = listOfNames.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+		String name = listOfNames.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
 		System.out.println(name);
 	}
 }

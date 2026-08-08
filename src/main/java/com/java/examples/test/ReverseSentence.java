@@ -11,6 +11,7 @@ public class ReverseSentence {
 		findNonRepeatedCharInAString(s);
 		findRepeatedWordsInAString();
 		convertStringToUppercase();
+		convertStringToLowercase();
 	}
 
 	private static void printReverseSentence(String s) {
@@ -107,6 +108,26 @@ public class ReverseSentence {
 		for (char c : input.toCharArray()) {
 			if (c >= 'a' && c <= 'z') {
 				sb.append((char) (c - 32));
+			} else {
+				sb.append(c);
+			}
+		}
+		System.out.println("\n" + sb.toString().trim());
+	}
+
+	private static void convertStringToLowercase() {
+		String input = "Mango";
+
+		String upperCase = input.chars().map(c -> c >= 'A' && c <= 'Z' ? (c + 32) : c).mapToObj(e -> (char) e)
+				.map(String::valueOf).collect(Collectors.joining());
+		System.out.println(upperCase);
+
+		StringBuilder sb = new StringBuilder();
+
+		//Without Stream API
+		for (char c : input.toCharArray()) {
+			if (c >= 'A' && c <= 'Z') {
+				sb.append((char) (c + 32));
 			} else {
 				sb.append(c);
 			}

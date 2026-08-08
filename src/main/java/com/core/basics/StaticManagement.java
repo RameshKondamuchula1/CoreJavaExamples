@@ -2,11 +2,17 @@ package com.core.basics;
 
 public class StaticManagement {
 	
-	public static String staticValue = StaticVars.staticValue;
+	//public static String staticValue = StaticVars.staticValue;
 	public String instanceValue = "NULL";
+	public static String staticValue = "static Values";
 	
 	public static void main(String[] args) {
+
 		System.out.println("This block executed after : " + staticValue);
+	}
+
+	static {
+		System.out.println("Static block executed");
 	}
 
 	private void instanceTest() {

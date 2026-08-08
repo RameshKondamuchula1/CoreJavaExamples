@@ -13,11 +13,9 @@ public class Delimeter {
 
 		String[] strArray = {"ITI", "Ramesh", "Manasa", "Meenu", "C71"};
 
-		Arrays.stream(strArray, 1, 4).forEach(
+		Arrays.stream(strArray, 1, 5).forEach(
                 System.out::println
 		);
-
-
 		
 		List<Integer> list = Arrays.stream(input).boxed().toList();
 		

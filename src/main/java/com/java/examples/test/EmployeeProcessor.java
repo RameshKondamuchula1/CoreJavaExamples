@@ -92,22 +92,22 @@ public static void main(String[] args) {
 
 	// Group by department
 	employees.stream().collect(Collectors.groupingBy(Employee::getDepartment)).entrySet()
-			.stream().forEach(System.out::println);
+			.forEach(System.out::println);
 
 
-	// Sort within each department by salary
-	List<List<Employee>> list = employees.stream()
+	// Sort within each department by salary Descending order
+	 employees.stream()
 			.collect(Collectors.groupingBy(Employee::getDepartment))
 			.values() // Gets the Collection<List<Employee>>
-			.stream()
-			.toList();
-	for(List<Employee> empList: list) {
-		empList.sort(Comparator.comparingDouble(Employee::getSalary).reversed());
-		System.out.println(empList);
-	}
+			.forEach(empList -> {
+				empList.sort(Comparator.comparingDouble(Employee::getSalary).reversed());
+				System.out.println(empList);
+			});
+
 
 	// Calculate total salary per department
-	employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.summarizingDouble(Employee::getSalary)))
+	employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+					Collectors.summarizingDouble(Employee::getSalary)))
 			.entrySet().forEach(System.out::println);
 
 	// EvenIds and Odd Ids

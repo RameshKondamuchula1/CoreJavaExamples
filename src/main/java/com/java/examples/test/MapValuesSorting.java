@@ -1,9 +1,6 @@
 package com.java.examples.test;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class MapValuesSorting {
 
@@ -19,14 +16,18 @@ public class MapValuesSorting {
 		
 	}
 
-    private static void mapValuesSorting(Map<String, String> map) {
-    	SortedSet<String> sortedSet = new TreeSet<>();
-    	
-    	for (Map.Entry<String, String> entry: map.entrySet()) {
-    		System.out.println(entry.getValue());
-    		sortedSet.add(entry.getValue());
-    	}
-    	
-    	System.out.println(sortedSet.toString());
+
+	private static void mapValuesSorting(Map<String, String> map) {
+		//Approach1
+		List<String> list = map.values().stream().sorted(Comparator.naturalOrder()).toList();
+
+		System.out.println("Sorted Values : " + list);
+
+		//Approach2 Without Streams
+		List<String> val = new ArrayList<>(map.values());
+
+		val.sort(Comparator.naturalOrder());
+
+		System.out.println("Sorted Values without Streams : " + val);
 	}
 }

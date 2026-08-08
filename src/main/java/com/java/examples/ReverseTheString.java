@@ -4,7 +4,7 @@ public class ReverseTheString {
 
     public static void main(String[] args) {
         ReverseTheString reverseTheString = new ReverseTheString();
-        String input = " My name is Kriti. I love Programming";
+        String input = " My name is Meenu. I love Programming";
         String result = reverseTheString.reverseString(input.trim());
         System.out.println(input);
         System.out.println(result);

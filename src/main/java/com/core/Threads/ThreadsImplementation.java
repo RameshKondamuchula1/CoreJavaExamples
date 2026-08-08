@@ -9,17 +9,16 @@ public class ThreadsImplementation {
 		List<Integer> integers = new ArrayList<>();
 		Task1 task1 = new Task1();
 		Task2 task2 = new Task2();
-		task2.run();
 		Task3 task3 = new Task3();
 		Thread thread = new Thread(task2);
 		//thread.setPriority(10);// Task2 given high priority
 		task1.setPriority(5);// Task12 given medium priority
 		//task2.run();
 		task3.start();
+		thread.start();
 		Thread.sleep(1000);
 		task1.start();
 		task3.join();// task 1 and task2 execution will wait till task3 completes its execution.
-		thread.start();
 		//integers.addAll(task1.integers1);
 		//integers.addAll(task3.integers);
 		Collections.sort(integers);
@@ -52,7 +51,6 @@ public class ThreadsImplementation {
 class Task1 extends Thread {
 
 	public List<Integer> integers1;
-
 
 	@Override
 	public synchronized void start() {

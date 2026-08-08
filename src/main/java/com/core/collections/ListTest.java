@@ -6,9 +6,9 @@ import java.util.*;
 public class ListTest {
 
 	public static void main(String[] args) throws InterruptedException {
-		//featuresArrayList();
-		Thread.sleep(1000);
-		featuresLinkedList();
+		featuresArrayList();
+		//Thread.sleep(1000);
+		//featuresLinkedList();
 
 	}
 	
@@ -19,6 +19,7 @@ public class ListTest {
 		linkedList.add("Ram");		
 		linkedList.add("Bangalore");
 		linkedList.add("Ramesh");//allows duplicates
+
 		linkedList.add(0, null);//Adding or deleting at any position is faster.
 		
 		System.out.println("LinkedList");
@@ -36,15 +37,19 @@ public class ListTest {
 	
 	private static void featuresArrayList() {
 		List<String> arrayList = new ArrayList();
-		
 		arrayList.add("Ramesh");
 		arrayList.add("Ram");
 		arrayList.add("Mansi");
 		arrayList.add("Bangalore");
 		arrayList.add("Ramesh");//allows duplicates
+		System.out.println("ArrayList: " + arrayList.size());
+		//Replace the existing element at index TC: O(1)
+		arrayList.set(1, "Raaa");
+		//Add at the index, From that index all elements do a right shift TC: O(N)
+		arrayList.add(1, "Maaa");
 		arrayList.add(0, null);//Adding or deleting at the end or middle is expensive -
 		// performance issue will occur
-		
+		System.out.println("ArrayList: " + arrayList.size());
 		System.out.println("ArrayList");
 		System.out.println(Instant.now());
 		arrayList.stream().forEach(s -> System.out.println(s));// Constant retrieval time - retrieval is faster

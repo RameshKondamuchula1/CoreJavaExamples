@@ -12,7 +12,7 @@ public class SubarraySumEqualsK {
         HashMap<Integer, Integer> prefixSumMap = new HashMap<>();
         prefixSumMap.put(0, 1); // Base case: a sum of 0 occurs once (empty subarray)
 
-        for (int num : nums) {
+        for (int num : nums) { //{1, 2, 3, 4, 5, 6}
             currentSum += num;
 
             // Check if there exists a prefix sum that satisfies the condition
@@ -28,15 +28,15 @@ public class SubarraySumEqualsK {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        int k = 6;
+        int[] nums = {4, 7, 1, 6, 5, 8, 2, 9, 3};
+        int k = 9;
         int result = countSubarraysWithSumK(nums, k);
-        int result1 = countSubarrays(nums, k);
+        //int result1 = countSubArrays(nums, k);
         System.out.println("Number of subarrays with sum " + k + ": " + result);
-        System.out.println("Number of subarrays with sum " + k + ": " + result1);
+        //System.out.println("Number of subarrays with sum " + k + ": " + result1);
     }
 
-    public static int countSubarrays(int[] nums, int k) {
+    public static int countSubArrays(int[] nums, int k) {
         // Map stores: <PrefixSum, Frequency>
         HashMap<Integer, Integer> map = new HashMap<>();
         int currentSum = 0;

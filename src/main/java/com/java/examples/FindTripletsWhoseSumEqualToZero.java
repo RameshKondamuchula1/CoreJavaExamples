@@ -1,6 +1,6 @@
 package com.java.examples;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class FindTripletsWhoseSumEqualToZero {
 
@@ -9,10 +9,11 @@ public class FindTripletsWhoseSumEqualToZero {
         FindTripletsWhoseSumEqualToZero whoseSumEqualToZero = new FindTripletsWhoseSumEqualToZero();
 
         //whoseSumEqualToZero.findTriplets(input);
+        System.out.println("Answer: " + whoseSumEqualToZero.findTriplets2(input));
 
-        whoseSumEqualToZero.findTriplets2(input);
     }
 
+    // If array is Contiguous
     private void findTriplets(int[] input) {
         Arrays.sort(input);
 
@@ -24,41 +25,28 @@ public class FindTripletsWhoseSumEqualToZero {
 
     }
 
-    public static void findTriplets2(int[] nums) {
-        // 1. Sort the array to use the two-pointer technique
+    public List<List<Integer>> findTriplets2(int[] nums) {
+
+        Set<List<Integer>> res  = new HashSet<>();
+        if(nums.length==0) return new ArrayList<>(res);
         Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length - 2; i++) {
-            // 2. Skip duplicates for the first element to ensure uniqueness
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
-
-            int left = i + 1;
-            int right = nums.length - 1;
-
-            while (left < right) {
-                int sum = nums[i] + nums[left] + nums[right];
-
-                if (sum == 0) {
-                    // Found a triplet
-                    System.out.println("[" + nums[i] + ", " + nums[left] + ", " + nums[right] + "]");
-
-                    // 3. Skip duplicates for the second and third elements
-                    while (left < right && nums[left] == nums[left + 1]) left++;
-                    while (left < right && nums[right] == nums[right - 1]) right--;
-
-                    // Move both pointers inward
-                    left++;
-                    right--;
-                } else if (sum < 0) {
-                    // Sum is too small, we need a larger number from the left
-                    left++;
-                } else {
-                    // Sum is too large, we need a smaller number from the right
-                    right--;
+        for(int i=0; i<nums.length-2;i++){
+            int j =i+1;
+            int  k = nums.length-1;
+            while(j<k){
+                int sum = nums[i]+nums[j]+nums[k];
+                if(sum==0){
+                    res.add(Arrays.asList(nums[i],nums[j++],nums[k--]));
+                }
+                else if (sum >0) {
+                    k--;
+                }
+                else {
+                    j++;
                 }
             }
+
         }
+        return new ArrayList<>(res);
     }
 }
