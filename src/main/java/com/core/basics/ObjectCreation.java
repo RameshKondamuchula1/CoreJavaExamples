@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ObjectCreation {
 
     private static final AtomicInteger count = new AtomicInteger(0);
+    //private static int count = 0;
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, CloneNotSupportedException {
         // new key word
@@ -32,5 +33,12 @@ public class ObjectCreation {
     }
 
 
+   /* public ObjectCreation() {
+        this.count++;
+    }
+
+    public Integer getCount() {
+        return count;
+    }*/
 
 }

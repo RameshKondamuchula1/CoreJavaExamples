@@ -13,6 +13,7 @@ public class SetTest {
     private static void testHashSet() {
         Set<String> set = new HashSet<>();
         set.add("ram");
+        //set.add(null);
         System.out.println("HashSet Add non duplicate: " + set.add("mansi"));
         System.out.println("HashSet Add duplicate: " + set.add("ram"));
     }
@@ -44,6 +45,7 @@ public class SetTest {
         System.out.println("Floor of 30: " + scores.floor(30));   // Outputs 25 (<= 30)
         System.out.println("Lower of 25: " + scores.lower(25));   // Outputs 10 (strictly < 25)
         System.out.println("Ceiling of 30: " + scores.ceiling(30));// Outputs 50 (>= 30)
+        System.out.println("higher of 30: " + scores.higher(30));// Outputs 50 (> 30)
 
         // Destructive retrieval
         System.out.println("Removed First: " + scores.pollFirst()); // Outputs 10 (Removes it from set)

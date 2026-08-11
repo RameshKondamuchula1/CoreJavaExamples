@@ -76,11 +76,11 @@ class SubClassModel extends TestModel{
 
     public SubClassModel() {
     }
-
-    /*@Override
+/*@Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }*/
+
 
     // A compilation error occurs when we try to override the super class clone method because
     // It is declared as final
