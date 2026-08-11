@@ -19,9 +19,7 @@ public class MultipleCallableTasks {
 		System.out.println("Callable execution completed for inoke any : " + result);
 		System.out.println("main execution completed");
 		executorService.shutdown();
-		
-		
-		
+
 	}
 
 }

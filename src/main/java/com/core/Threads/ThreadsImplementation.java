@@ -53,7 +53,7 @@ class Task1 extends Thread {
 	public List<Integer> integers1;
 
 	@Override
-	public synchronized void start() {
+	public void start() {
 		super.start();
 		System.out.println("start(1)");
         // pre-logic that needs to execute before run() method called

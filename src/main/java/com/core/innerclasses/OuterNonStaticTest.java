@@ -14,7 +14,7 @@ public class OuterNonStaticTest {
     static void localInnerMethod() {
         int x = 98;
         final int Y = 100;
-       //Method Local Inner Class
+        //Method Local Inner Class
         //A method-local inner class is defined inside a method of the outer class.
         // It can only be instantiated within the method where it is defined.
         //Cannot access non-final local variables before Java 8.
