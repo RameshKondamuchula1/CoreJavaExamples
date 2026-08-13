@@ -38,7 +38,8 @@ public class ListTest {
 	private static void featuresArrayList() {
 		List<String> arrayList = new ArrayList();
 		arrayList.add("Ramesh");
-		arrayList.add("Ram");
+		System.out.println("ArrayList first add : " + arrayList.add("Ram"));
+		System.out.println("ArrayList second add : " + arrayList.add("Ram"));
 		arrayList.add("Mansi");
 		arrayList.add("Bangalore");
 		arrayList.add("Ramesh");//allows duplicates

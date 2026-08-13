@@ -20,4 +20,9 @@ public interface InterfaceA {
     static void getM() {
 
     }
+
+    /*protected String getMsg22() {
+
+        return "";
+    }*/
 }

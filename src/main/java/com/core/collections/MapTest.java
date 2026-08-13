@@ -28,8 +28,11 @@ public class MapTest {
 
         // Standard HashMap
         Map<String, String> standardMap = new HashMap<>();
-        standardMap.put(key1, "Value 1");
-        standardMap.put(key2, "Value 2"); // Overwrites "Value 1" because key1.equals(key2) is true
+        System.out.println("Value 1: " + standardMap.put(key1, "Value 1"));// If key is not present it returns null value
+        System.out.println("HashMap: " + standardMap.get(key1));
+        System.out.println("Value 2: " + standardMap.put(key2, "Value 2"));// Overwrites "Value 1" because key1.equals(key2) is true
+        // If key is  present it returns existing value
+
 
         // IdentityHashMap
         Map<String, String> identityMap = new IdentityHashMap<>();
