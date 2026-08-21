@@ -8,16 +8,16 @@ public class PushGivenCharToEndOfTheArray {
 
         int[] intArray = {0,1,9,2,0,4,3,0,8,0,7,0,6};
         PushGivenCharToEndOfTheArray charToEndOfTheArray = new PushGivenCharToEndOfTheArray();
-        charToEndOfTheArray.withStreams(intArray);
+        //charToEndOfTheArray.withStreams(intArray);
         charToEndOfTheArray.twoPointerApproach();
     }
 
     public void twoPointerApproach() {
-        int[] intArray = {0,1,9,2,0,4,3,0,8,0,7,0,6};
+        int[] intArray = {1,9,2,0,4,3,0,8,0,7,0,6};
         int currentZeroIndex = 0;
          for (int i = 0; i < intArray.length; i++) {
              if (intArray[i] != 0) {
-                 int zero = intArray[currentZeroIndex];
+                    int zero = intArray[currentZeroIndex];
                  intArray[currentZeroIndex] = intArray[i];
                  intArray[i] = zero;
                  currentZeroIndex++;

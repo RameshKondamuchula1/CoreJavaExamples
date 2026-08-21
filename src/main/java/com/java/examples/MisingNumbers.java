@@ -7,11 +7,8 @@ import java.util.List;
 public class MisingNumbers {
     public static void main(String[] args) {
         int[] intArray = {1,2,15,10,5};
-        //15 - 1 = 14
-        //14 - 4 = 10
 
-
-        Arrays.sort(intArray);//1,5,9
+        Arrays.sort(intArray);
 
         List<Integer> missingNumbers = new ArrayList<>();
         for (int i = 0; i < intArray.length - 1; i++) {
@@ -23,6 +20,6 @@ public class MisingNumbers {
                 missingNumbers.add(j);
             }
         }
-         System.out.println(Arrays.toString(missingNumbers.toArray()));
+        System.out.println(Arrays.toString(missingNumbers.toArray()));
     }
 }

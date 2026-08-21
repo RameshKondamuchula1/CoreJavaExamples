@@ -39,22 +39,4 @@ public class RemoveDuplicatesFromArray {
         s.chars().distinct().mapToObj(c -> (char) c).forEach(System.out::print);
     }
 
-    public int removeDuplicates2(int[] nums) {
-        if (nums.length == 0) return 0;
-
-        if (nums.length == 1) return 1;
-
-        int k = 1; // Pointer for the position of the next unique element
-
-        for (int i = 1; i < nums.length; i++) {
-            // If current element is different from the previous one
-            if (nums[i] != nums[i - 1]) { // Move it to the 'k' position
-                k++; // Increment count of unique elements
-            }
-        }
-        System.out.println(Arrays.toString(nums));
-
-
-        return k;
-    }
 }

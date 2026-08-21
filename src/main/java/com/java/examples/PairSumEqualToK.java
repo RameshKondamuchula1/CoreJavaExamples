@@ -31,7 +31,7 @@ public class PairSumEqualToK {
             int temp = sum - num;
             if (set.contains(temp)) {
                 System.out.println("Pari is: " + num + " " + temp);
-            }else {
+            } else {
                 set.add(num);
             }
         }

@@ -5,28 +5,20 @@ import java.util.Arrays;
 public class BuyAndSellMaxProfit {
 
     public static void main(String[] args) {
-        BuyAndSellMaxProfit buyAndSellMaxProfit = new BuyAndSellMaxProfit();
-        int[] stockPrices = {1,2,9,7,6};
+        int[] stockPrices = {2,8,1,7,6,9,10};
 
-        System.out.println("Max Profit: " + buyAndSellMaxProfit.getMaxProfit(stockPrices));
+        System.out.println("Max Profit: " + maxProfit(stockPrices));
     }
 
-    private int getMaxProfit(int[] stockPrices) {
-        int maxProfit = 0;
-
-        Arrays.sort(stockPrices);//{12679}
-
-        int currentMinimum = Integer.MAX_VALUE;
-
-        for (int i = 0; i < stockPrices.length; i++) {
-            int presentValue = stockPrices[i];
-            if (currentMinimum > presentValue) {
-                currentMinimum = presentValue;
+    static int maxProfit(int[] arr) {
+        int profit = 0;
+        int minimum = arr[0];
+        for(int i = 1;i< arr.length;i++) {
+            minimum =Math.min(arr[i], minimum);
+            if(arr[i] > minimum) {
+                profit = Math.max(profit, arr[i] - minimum);
             }
-
-            maxProfit = Math.max(maxProfit, presentValue) - currentMinimum;
-
         }
-        return maxProfit;
+        return profit;
     }
 }

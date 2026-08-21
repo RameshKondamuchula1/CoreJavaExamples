@@ -29,10 +29,11 @@ public class ObjectCloning {
         // changes to one object, will not affect the other one.
 
         //TestModel testModel1 = (TestModel) testModel.clone(); // Super class throws exception
+        System.out.println("SubClassModel: " + testModelDeepCopy.getName());
         SubClassModel subClassModel = new SubClassModel();
 
         //SubClassModel subClassModelClone = (SubClassModel) subClassModel.clone();// Throws ClassNotSupported Exception
-
+        //System.out.println("SubClassModel: " + subClassModelClone.getName());
     }
 }
 
@@ -75,10 +76,11 @@ class TestModel  implements Cloneable {
 class SubClassModel extends TestModel{
 
     public SubClassModel() {
+        super("Ramesh");
     }
-/*@Override
+    /*@Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return this;
     }*/
 
 

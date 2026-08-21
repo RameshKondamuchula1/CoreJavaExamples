@@ -29,7 +29,7 @@ public class BalacedParanthesis {
 
     public void printBalancedparanthesis2() {
         String input = ")))";
-        int balance = 0, neededAtStart = 0;
+        int balance = 0;
         for (char c : input.toCharArray()) { // O(N) time complexicity
             if (c == '(') balance++;
             else balance--;

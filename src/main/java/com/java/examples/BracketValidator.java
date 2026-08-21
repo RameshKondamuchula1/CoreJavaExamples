@@ -12,6 +12,7 @@ public class BracketValidator {
         System.out.println(validator("{"));// Output: false
         System.out.println(validator("{[()())}"));
         System.out.println(validator("{}()[]")); // Output: true
+        System.out.println(validator("(({}[()")); // Output: false
     }
 
     public static boolean validator(String input) {
@@ -35,8 +36,6 @@ public class BracketValidator {
 
             }
         }
-
-
 
         return bracktes.isEmpty();
     }
