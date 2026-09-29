@@ -1,9 +1,6 @@
 package com.core.collections;
 
-import java.util.HashMap;
-import java.util.IdentityHashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MapTest {
     public static void main(String[] args) {
@@ -20,6 +17,19 @@ public class MapTest {
     static void testLinkedHashMap() {
         Map<String, String> map = new LinkedHashMap<>();
         map.put(" ", " ");
+    }
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> map = new HashMap<>();
+        for (String str: strs) {
+
+            char[] c = str.toCharArray();
+            Arrays.sort(c);
+            String key = new String(c);
+            map.putIfAbsent(key, new ArrayList<>()).add(str);
+        }
+
+        return new ArrayList<>(map.values());
     }
 
     static void testIdentityHashMap() {
