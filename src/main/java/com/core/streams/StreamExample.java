@@ -1,4 +1,4 @@
-package com.core;
+package com.core.streams;
 
 import java.util.Arrays;
 import java.util.List;
